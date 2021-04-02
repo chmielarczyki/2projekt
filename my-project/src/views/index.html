@@ -53,6 +53,23 @@
     <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
   </head>
   <body>
+      <header class="header header-sticky mb-4">
+        <div class="container-fluid">
+          <ul class="header-nav d-md-down-none">
+            <li class="nav-item"><a class="nav-link" href="#">Łukasz Kaczmarek</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">(NR: 650)</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
+          </ul>
+          <ul class="header-nav ms-auto">
+            <li class="nav-item d-md-down-none">
+              <button type="button" class="btn btn-block btn-success text-white">Dodaj nową firmę </button>
+            </li>
+            <li class="nav-item d-md-down-none">
+              <button type="button" class="btn btn-block btn-danger text-white">Wyloguj się </button>
+            </li>
+          </ul>
+        </div>
+      </header>
     <div class="sidebar sidebar-dark sidebar-fixed sidebar-self-hiding-md pt-5" id="sidebar">
       <ul class="sidebar-nav" data-coreui="navigation">
         <li class="nav-item">
@@ -94,66 +111,98 @@
       </ul>
     </div>
     <div class="wrapper d-flex flex-column min-vh-100">
-      <header class="header header-sticky mb-4">
-        <div class="container-fluid">
-          <ul class="header-nav d-md-down-none">
-            <li class="nav-item"><a class="nav-link" href="#">Łukasz Kaczmarek</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">(NR: 650)</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
-          </ul>
-          <ul class="header-nav ms-auto">
-            <li class="nav-item d-md-down-none">
-              <button type="button" class="btn btn-block btn-success text-white">Dodaj nową firmę </button>
+      <div class="col-12 pb-4">
+        <div class="nav-tabs-boxed nav-tabs-boxed-top-right">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-coreui-toggle="tab" href="#home" role="tab" aria-controls="home">
+                <i class=" cil-check-circle"></i>Home</a>
             </li>
-            <li class="nav-item d-md-down-none">
-              <button type="button" class="btn btn-block btn-danger text-white">Wyloguj się </button>
+            <li class="nav-item">
+              <a class="nav-link" data-coreui-toggle="tab" href="#profile" role="tab" aria-controls="profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab" aria-controls="messages">Messages</a>
             </li>
           </ul>
         </div>
-      </header>
-
-      <div class="col-12 mb-4">
-        <div class="nav-tabs-boxed nav-tabs-boxed-top-right">
-          <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#home" role="tab" aria-controls="home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#profile" role="tab" aria-controls="profile">Profile</a></li>
-            <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab" aria-controls="messages">Messages</a></li>
-          </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="home" role="tabpanel">
-              <div>
+              <div class="headers-button-section p-2">
                 <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Eytuj firmę</button>
                 <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Dodaj nowy wpis</button>
                 <button type="button" class="btn btn-block btn-danger text-white mx-1 my-2">Zgłoś do usunięcia</button>
                 <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Połącz</button>
               </div>
-              
-              1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <section class="m-3">
+                <h1>BRUNO BHP&PPOŻ Teofil Jarosz</h1>
+                <div class="firm-info ">
+                  <ul class="list-unstyled">
+                    <li><strong>Opiekun Firmy:</strong></li>
+                    <li><strong>NIP</strong></li>
+                    <br>
+                    <li><i class="icon icon-2xl cil-print"></i>Adres</li>
+                    <li><i class="icon icon-2xl cil-envelope-closed"></i>Adres korespondencyjny</li>
+                    <br>
+                    <li><i class="icon icon-2xl cil-user"></i>Właściciel</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
             <div class="tab-pane" id="profile" role="tabpanel">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             <div class="tab-pane" id="messages" role="tabpanel">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
           </div>
         </div>
-      </div>
 
-      <div class="col-12 mb-4">
-        <div class="nav-tabs-boxed nav-tabs-boxed-top-right">
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-coreui-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"  id="pills-profile-tab" data-coreui-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-contact-tab" data-coreui-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-            </li>
+        <div class="card-lit col-12">
+          <ul class="nav nav-tabs" id="myTab1" role="tablist">
+            <li class="nav-item"><a class="nav-link active" id="data-company-tab" data-coreui-toggle="tab" href="#data-company" role="tab" aria-controls="home" aria-selected="true">Dane Firmy</a></li>
+            <li class="nav-item"><a class="nav-link" id="products-tab" data-coreui-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">Produkty</a></li>
           </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div class="tab-content" id="myTab1Content">
+            <div class="tab-pane fade show active" id="data-company" role="tabpanel" aria-labelledby="data-company-tab">
+              Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
+              synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+              retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+              placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+            <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+              labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+              beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+              vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica
+              VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+              stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+            </div>
           </div>
         </div>
+
+        <div class="col-12 mb-4">
+          <div class="nav-tabs-boxed nav-tabs-boxed-top-right">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-coreui-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  id="pills-profile-tab" data-coreui-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-coreui-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
+
+
 
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">

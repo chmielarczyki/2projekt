@@ -110,3 +110,33 @@
   opacity: 1;
   transition: all 0.5s;
 }
+
+.btn-icon-money {
+  color: #39f;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.btn-icon-money::after {
+  content: "edytuj";
+  font-weight: 400;
+  position: absolute;
+  left: 30%;
+  top: 10%;
+  right: 5%;
+  bottom: 0;
+  opacity: 0;
+}
+
+.btn-icon-money:hover {
+  color: #ffffff;
+  background: #39f;
+  transition: all 0.5s;
+  box-shadow: 0px 6px 15px #0000ff61;
+  padding-right: 3.5rem;
+}
+
+.btn-icon-money:hover::after {
+  opacity: 1;
+  transition: all 0.5s;
+}

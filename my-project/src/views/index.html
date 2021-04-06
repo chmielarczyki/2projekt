@@ -51,904 +51,470 @@
       gtag('config', 'UA-118965717-5');
     </script>
     <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
+        <!-- Iga Added -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/all.min.css">
   </head>
   <body>
-      <header class="header header-sticky mb-4">
-        <div class="container-fluid">
-          <ul class="header-nav d-md-down-none">
-            <li class="nav-item"><a class="nav-link" href="#">Łukasz Kaczmarek</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">(NR: 650)</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
-          </ul>
-          <ul class="header-nav ms-auto">
-            <li class="nav-item d-md-down-none">
-              <button type="button" class="btn btn-block btn-success text-white">Dodaj nową firmę </button>
-            </li>
-            <li class="nav-item d-md-down-none">
-              <button type="button" class="btn btn-block btn-danger text-white">Wyloguj się </button>
-            </li>
-          </ul>
-        </div>
-      </header>
-    <div class="sidebar sidebar-dark sidebar-fixed sidebar-self-hiding-md pt-5" id="sidebar">
-      <ul class="sidebar-nav" data-coreui="navigation">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Pulpit</a>
+    <div class="sidebar sidebar-dark sidebar-fixed sidebar-self-hiding-md" id="sidebar">
+      <ul class="sidebar-nav pt-5" data-coreui="navigation">
+        <li class="nav-item"><a class="nav-link" href="">
+            <svg class="nav-icon">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-speedometer"></use>
+            </svg> Pulpit</a>
+          </li>
+        <li class="nav-item"><a class="nav-link" href="">
+            <svg class="nav-icon">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-drop"></use>
+            </svg> Firmy</a>
+          </li>
+        <li class="nav-item"><a class="nav-link" href="">
+            <svg class="nav-icon">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-pencil"></use>
+            </svg> Kalendarz</a>
+          </li>
+        <li class="nav-divider"></li>
+        <li class="nav-item"><a class="nav-link" href="">
+          <svg class="nav-icon">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-puzzle"></use>
+          </svg> Produkty</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Firmy</a>
+        <li class="nav-item"><a class="nav-link" href="">
+          <svg class="nav-icon">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-cursor"></use>
+          </svg> Makiety</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kalendarz</a>
+        <li class="nav-item"><a class="nav-link" href="">
+            <svg class="nav-icon">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-chart-pie"></use>
+            </svg> Skład</a>
         </li>
-        <li class="dropdown-divider"></li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Produkty</a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="#">Makiety</a>
+        <li class="nav-item"><a class="nav-link" href="">
+          <svg class="nav-icon">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-star"></use>
+          </svg> Produkty</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sklad</a>
+        <li class="nav-item"><a class="nav-link" href="">
+          <svg class="nav-icon">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-bell"></use>
+          </svg> Branże</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Produkty</a>
+
+        <li class="nav-item"><a class="nav-link" href="">
+            <svg class="nav-icon">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-calculator"></use>
+            </svg> Dzwoń</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Branże</a>
+        <li class="nav-item"><a class="nav-link" href="">
+            <svg class="nav-icon">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-star"></use>
+            </svg> Eksport</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Dzwoń</a>
+        <li class="nav-item"><a class="nav-link" href="">
+          <svg class="nav-icon">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-cloud-download"></use>
+          </svg> Import</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Eksport</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Import</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Poczta</a>
+        <li class="nav-item"><a class="nav-link" href="">
+          <svg class="nav-icon">
+            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-layers"></use>
+          </svg> Poczta</a>
         </li>
       </ul>
+      <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
     <div class="wrapper d-flex flex-column min-vh-100">
-      <div class="col-12 pb-4">
+      <header class="header header-sticky mb-4">
+        <div class="container-fluid">
+          <button class="header-toggler order-sm-first px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+            <svg class="icon icon-lg">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-menu"></use>
+            </svg>
+          </button>
+            <ul class="header-nav d-md-down-none ">
+              <li class="nav-item"><a class="nav-link" href="#">Łukasz Kaczmarek</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">(NR: 650)</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
+            </ul>
+            <ul class="header-nav ms-sm-auto">
+              <li class="nav-item d-md-down-none">
+                <button type="button" class="btn btn-block btn-success text-white">Dodaj nową firmę </button>
+              </li>
+              <li class="nav-item d-md-down-none">
+                <button type="button" class="btn btn-block btn-danger text-white">Wyloguj się </button>
+              </li>
+            </ul>
+
+        </div>
+      </header>
+
+      <div class="pb-4">
         <div class="nav-tabs-boxed nav-tabs-boxed-top-right">
           <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" data-coreui-toggle="tab" href="#home" role="tab" aria-controls="home">
-                <i class=" cil-check-circle"></i>Home</a>
+              <a class="nav-link active" data-coreui-toggle="tab" href="#firm-name1" role="tab" aria-controls="firm-name1">
+                <i class="cil-check-circle text-success"></i><span class="mx-2">Firma</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-coreui-toggle="tab" href="#profile" role="tab" aria-controls="profile">Profile</a>
+              <a class="nav-link" data-coreui-toggle="tab" href="#firm-name2" role="tab" aria-controls="firm-name2">Firma 2</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab" aria-controls="messages">Messages</a>
+              <a class="nav-link" data-coreui-toggle="tab" href="#firm-name3" role="tab" aria-controls="firm-name3">Firma 3</a>
             </li>
           </ul>
         </div>
-          <div class="tab-content">
-            <div class="tab-pane active" id="home" role="tabpanel">
-              <div class="headers-button-section p-2">
-                <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Eytuj firmę</button>
-                <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Dodaj nowy wpis</button>
-                <button type="button" class="btn btn-block btn-danger text-white mx-1 my-2">Zgłoś do usunięcia</button>
-                <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Połącz</button>
-              </div>
-              <section class="m-3">
-                <h1>BRUNO BHP&PPOŻ Teofil Jarosz</h1>
-                <div class="firm-info ">
-                  <ul class="list-unstyled">
-                    <li><strong>Opiekun Firmy:</strong></li>
-                    <li><strong>NIP</strong></li>
-                    <br>
-                    <li><i class="icon icon-2xl cil-print"></i>Adres</li>
-                    <li><i class="icon icon-2xl cil-envelope-closed"></i>Adres korespondencyjny</li>
-                    <br>
-                    <li><i class="icon icon-2xl cil-user"></i>Właściciel</li>
-                  </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="firm-name1" role="tabpanel">
+            <div class="headers-button-section p-2">
+              <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Eytuj firmę</button>
+              <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Dodaj nowy wpis</button>
+              <button type="button" class="btn btn-block btn-danger text-white mx-1 my-2">Zgłoś do usunięcia</button>
+              <button type="button" class="btn btn-block btn-primary text-white mx-1 my-2">Połącz</button>
+            </div>
+            <div class="info-panel p-3 container">
+              <div class="row">
+                <div class="col-md-8">
+                  <h1>BRUNO BHP&PPOŻ Teofil Jarosz</h1>
+                  <div class="firm-info ">
+                    <ul class="list-unstyled">
+                      <li><strong>Opiekun Firmy:</strong></li>
+                      <li><strong>NIP</strong></li>
+                      <br>
+                      <li><i class="icon icon-xl cil-print"></i><span class="mx-4">Adres</span></li>
+                      <li><i class="icon icon-xl cil-envelope-closed "></i><span class="mx-4">Adres korespondencyjny</span></li>
+                      <br>
+                      <li><i class="icon icon-xl cil-user"></i><span class="mx-4">Właściciel</span></li>
+                    </ul>
+                  </div>
                 </div>
-              </section>
-            </div>
-            <div class="tab-pane" id="profile" role="tabpanel">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <div class="tab-pane" id="messages" role="tabpanel">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-          </div>
-        </div>
-
-        <div class="card-lit col-12">
-          <ul class="nav nav-tabs" id="myTab1" role="tablist">
-            <li class="nav-item"><a class="nav-link active" id="data-company-tab" data-coreui-toggle="tab" href="#data-company" role="tab" aria-controls="home" aria-selected="true">Dane Firmy</a></li>
-            <li class="nav-item"><a class="nav-link" id="products-tab" data-coreui-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">Produkty</a></li>
-          </ul>
-          <div class="tab-content" id="myTab1Content">
-            <div class="tab-pane fade show active" id="data-company" role="tabpanel" aria-labelledby="data-company-tab">
-              Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
-              synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-              retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-              placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
-            </div>
-            <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
-              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
-              labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
-              beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
-              vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica
-              VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
-              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-              stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                <div class="main-info col-md-4 bg-white h-50 p-3">
+                  <h4>Ważne informacje<span class="fs-6 fw-light mx-3"><a class="edit-link" href="">Edytuj</a></span></h4>
+                  <p>w sprawie projektu z p.Grzegorzem Jarosz w sprawach projektu: 500 280 077</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-12 mb-4">
-          <div class="nav-tabs-boxed nav-tabs-boxed-top-right">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-coreui-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  id="pills-profile-tab" data-coreui-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-coreui-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-              </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            </div>
+          <div class="tab-pane" id="firm-name2" role="tabpanel">
+            2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="tab-pane" id="firm-name3" role="tabpanel">
+            3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
         </div>
-
-
-
       </div>
 
-
-
-      <div class="body flex-grow-1 px-3">
-        <div class="container-lg">
-          <div class="row">
-            <div class="col-sm-6 col-lg-3">
-              <div class="card mb-4 text-white bg-primary">
-                <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="fs-4 fw-semibold">9.823</div>
-                    <div>Members online</div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg class="icon">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                      </svg>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-                  </div>
-                </div>
-                <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-                  <canvas class="chart" id="card-chart1" height="70"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-            <div class="col-sm-6 col-lg-3">
-              <div class="card mb-4 text-white bg-info">
-                <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="fs-4 fw-semibold">9.823</div>
-                    <div>Members online</div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg class="icon">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                      </svg>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-                  </div>
-                </div>
-                <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-                  <canvas class="chart" id="card-chart2" height="70"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-            <div class="col-sm-6 col-lg-3">
-              <div class="card mb-4 text-white bg-warning">
-                <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="fs-4 fw-semibold">9.823</div>
-                    <div>Members online</div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg class="icon">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                      </svg>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-                  </div>
-                </div>
-                <div class="c-chart-wrapper mt-3" style="height:70px;">
-                  <canvas class="chart" id="card-chart3" height="70"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-            <div class="col-sm-6 col-lg-3">
-              <div class="card mb-4 text-white bg-danger">
-                <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="fs-4 fw-semibold">9.823</div>
-                    <div>Members online</div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg class="icon">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                      </svg>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-                  </div>
-                </div>
-                <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-                  <canvas class="chart" id="card-chart4" height="70"></canvas>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-          </div>
-          <!-- /.row-->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <h4 class="card-title mb-0">Traffic</h4>
-                  <div class="small text-medium-emphasis">January 2021</div>
-                </div>
-                <div class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons">
-                  <div class="btn-group btn-group-toggle mx-3" data-coreui-toggle="buttons">
-                    <input class="btn-check" id="option1" type="radio" name="options" autocomplete="off">
-                    <label class="btn btn-outline-secondary"> Day</label>
-                    <input class="btn-check" id="option2" type="radio" name="options" autocomplete="off" checked="">
-                    <label class="btn btn-outline-secondary active"> Month</label>
-                    <input class="btn-check" id="option3" type="radio" name="options" autocomplete="off">
-                    <label class="btn btn-outline-secondary"> Year</label>
-                  </div>
-                  <button class="btn btn-primary" type="button">
-                    <svg class="icon">
-                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-cloud-download"></use>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="c-chart-wrapper" style="height:300px;margin-top:40px;">
-                <canvas class="chart" id="main-chart" height="300"></canvas>
-              </div>
-            </div>
-            <div class="card-footer">
-              <div class="row text-center">
-                <div class="col-sm-12 col-md mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Visits</div>
-                  <div class="fw-semibold">29.703 Users (40%)</div>
-                  <div class="progress progress-xs mt-2">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Unique</div>
-                  <div class="fw-semibold">24.093 Users (20%)</div>
-                  <div class="progress progress-xs mt-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Pageviews</div>
-                  <div class="fw-semibold">78.706 Views (60%)</div>
-                  <div class="progress progress-xs mt-2">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">New Users</div>
-                  <div class="fw-semibold">22.123 Users (80%)</div>
-                  <div class="progress progress-xs mt-2">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md mb-sm-2 mb-0">
-                  <div class="text-medium-emphasis">Bounce Rate</div>
-                  <div class="fw-semibold">40.15%</div>
-                  <div class="progress progress-xs mt-2">
-                    <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.card.mb-4-->
-          <div class="row">
-            <div class="col-sm-6 col-lg-4">
-              <div class="card mb-4" style="--cui-card-cap-bg: #3b5998">
-                <div class="card-header position-relative d-flex justify-content-center align-items-center">
-                  <svg class="icon icon-3xl text-white my-4">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-facebook-f"></use>
-                  </svg>
-                  <div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
-                    <canvas id="social-box-chart-1" height="90"></canvas>
-                  </div>
-                </div>
-                <div class="card-body row text-center">
-                  <div class="col">
-                    <div class="fs-5 fw-semibold">89k</div>
-                    <div class="text-uppercase text-medium-emphasis small">friends</div>
-                  </div>
-                  <div class="vr"></div>
-                  <div class="col">
-                    <div class="fs-5 fw-semibold">459</div>
-                    <div class="text-uppercase text-medium-emphasis small">feeds</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-            <div class="col-sm-6 col-lg-4">
-              <div class="card mb-4" style="--cui-card-cap-bg: #00aced">
-                <div class="card-header position-relative d-flex justify-content-center align-items-center">
-                  <svg class="icon icon-3xl text-white my-4">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-twitter"></use>
-                  </svg>
-                  <div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
-                    <canvas id="social-box-chart-2" height="90"></canvas>
-                  </div>
-                </div>
-                <div class="card-body row text-center">
-                  <div class="col">
-                    <div class="fs-5 fw-semibold">973k</div>
-                    <div class="text-uppercase text-medium-emphasis small">followers</div>
-                  </div>
-                  <div class="vr"></div>
-                  <div class="col">
-                    <div class="fs-5 fw-semibold">1.792</div>
-                    <div class="text-uppercase text-medium-emphasis small">tweets</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-            <div class="col-sm-6 col-lg-4">
-              <div class="card mb-4" style="--cui-card-cap-bg: #4875b4">
-                <div class="card-header position-relative d-flex justify-content-center align-items-center">
-                  <svg class="icon icon-3xl text-white my-4">
-                    <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-linkedin"></use>
-                  </svg>
-                  <div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
-                    <canvas id="social-box-chart-3" height="90"></canvas>
-                  </div>
-                </div>
-                <div class="card-body row text-center">
-                  <div class="col">
-                    <div class="fs-5 fw-semibold">500+</div>
-                    <div class="text-uppercase text-medium-emphasis small">contacts</div>
-                  </div>
-                  <div class="vr"></div>
-                  <div class="col">
-                    <div class="fs-5 fw-semibold">292</div>
-                    <div class="text-uppercase text-medium-emphasis small">feeds</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.col-->
-          </div>
-          <!-- /.row-->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card mb-4">
-                <div class="card-header">Traffic & Sales</div>
+      <div class="card-lit col-12">
+        <ul class="nav nav-tabs" id="myTab1" role="tablist">
+          <li class="nav-item"><a class="nav-link active" id="data-company-tab" data-coreui-toggle="tab" href="#data-company" role="tab" aria-controls="home" aria-selected="true">Dane Firmy</a></li>
+          <li class="nav-item"><a class="nav-link" id="products-tab" data-coreui-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">Produkty</a></li>
+        </ul>
+        <div class="tab-content" id="myTab1Content">
+          <div class="tab-pane fade show active" id="data-company" role="tabpanel" aria-labelledby="data-company-tab">
+           <div class="container">
+             <div class="row">
+               <div class="list col-6 col-md-8">
+                <ul class="list-unstyled">
+                  <li class="mt-3">
+                    <span><i class="cil-check-circle text-success"></i></span><h4 class="d-inline mx-3">BRUNO BHP</h4>
+                    <p class="py-3 m-0">Odzież ochronna, obuwie robocze </p>
+                    <p class="font-size-075 fw-bold text-uppercase text-muted py-0 ">lit brzeg 2021 (M3-BRUNO BHP&POPŻ)</p>
+                    <button type="button" class="btn btn-primary">Edytuj logo</button>
+                    <button type="button" class="btn btn-primary">Ustaw jako główny</button>
+                    <button type="button" class="btn btn-primary">Edytuj</button>
+                    <button type="button" class="btn btn-primary">Do składu</button>
+                    <button type="button" class="btn btn-danger text-white">Usuń</button>
+                    <hr>
+                  </li>
+                  <li class="mt-3">
+                    <span><i class="cil-check-circle text-success"></i></span><h4 class="d-inline mx-3">BRUNO BHP</h4>
+                    <p class="py-3 m-0">Odzież ochronna, obuwie robocze </p>
+                    <p class="font-size-075 fw-bold text-uppercase text-muted py-0 ">lit brzeg 2021 (M3-BRUNO BHP&POPŻ)</p>
+                    <button type="button" class="btn btn-primary">Edytuj logo</button>
+                    <button type="button" class="btn btn-primary">Ustaw jako główny</button>
+                    <button type="button" class="btn btn-primary">Edytuj</button>
+                    <button type="button" class="btn btn-primary">Do składu</button>
+                    <button type="button" class="btn btn-danger text-white">Usuń</button>
+                  </li>
+                </ul>
+               </div>
+               <div class="col-6 col-md-4">
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="c-callout c-callout-info"><small class="text-medium-emphasis">New Clients</small>
-                            <div class="fs-5 fw-semibold">9,123</div>
-                          </div>
-                        </div>
-                        <!-- /.col-->
-                        <div class="col-6">
-                          <div class="c-callout c-callout-danger"><small class="text-medium-emphasis">Recuring Clients</small>
-                            <div class="fs-5 fw-semibold">22,643</div>
-                          </div>
-                        </div>
-                        <!-- /.col-->
-                      </div>
-                      <!-- /.row-->
-                      <hr class="mt-0">
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Monday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Tuesday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Wednesday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Thursday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Friday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Saturday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-4">
-                        <div class="progress-group-prepend"><span class="text-medium-emphasis small">Sunday</span></div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 9%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /.col-->
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="c-callout c-callout-warning"><small class="text-medium-emphasis">Pageviews</small>
-                            <div class="fs-5 fw-semibold">78,623</div>
-                          </div>
-                        </div>
-                        <!-- /.col-->
-                        <div class="col-6">
-                          <div class="c-callout c-callout-success"><small class="text-medium-emphasis">Organic</small>
-                            <div class="fs-5 fw-semibold">49,123</div>
-                          </div>
-                        </div>
-                        <!-- /.col-->
-                      </div>
-                      <!-- /.row-->
-                      <hr class="mt-0">
-                      <div class="progress-group">
-                        <div class="progress-group-header">
-                          <svg class="icon icon-lg me-2">
-                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
-                          </svg>
-                          <div>Male</div>
-                          <div class="ms-auto fw-semibold">43%</div>
-                        </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group mb-5">
-                        <div class="progress-group-header">
-                          <svg class="icon icon-lg me-2">
-                            <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user-female"></use>
-                          </svg>
-                          <div>Female</div>
-                          <div class="ms-auto fw-semibold">37%</div>
-                        </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
-                          <svg class="icon icon-lg me-2">
-                            <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-google"></use>
-                          </svg>
-                          <div>Organic Search</div>
-                          <div class="ms-auto fw-semibold me-2">191.235</div>
-                          <div class="text-medium-emphasis small">(56%)</div>
-                        </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
-                          <svg class="icon icon-lg me-2">
-                            <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-facebook-f"></use>
-                          </svg>
-                          <div>Facebook</div>
-                          <div class="ms-auto fw-semibold me-2">51.223</div>
-                          <div class="text-medium-emphasis small">(15%)</div>
-                        </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
-                          <svg class="icon icon-lg me-2">
-                            <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-twitter"></use>
-                          </svg>
-                          <div>Twitter</div>
-                          <div class="ms-auto fw-semibold me-2">37.564</div>
-                          <div class="text-medium-emphasis small">(11%)</div>
-                        </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 11%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="progress-group">
-                        <div class="progress-group-header">
-                          <svg class="icon icon-lg me-2">
-                            <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-linkedin"></use>
-                          </svg>
-                          <div>LinkedIn</div>
-                          <div class="ms-auto fw-semibold me-2">27.319</div>
-                          <div class="text-medium-emphasis small">(8%)</div>
-                        </div>
-                        <div class="progress-group-bars">
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /.col-->
-                  </div>
-                  <!-- /.row--><br>
-                  <div class="table-responsive">
-                    <table class="table border mb-0">
-                      <thead class="table-light fw-semibold">
-                        <tr class="align-middle">
-                          <th class="text-center">
-                            <svg class="icon">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-people"></use>
-                            </svg>
-                          </th>
-                          <th>User</th>
-                          <th class="text-center">Country</th>
-                          <th>Usage</th>
-                          <th class="text-center">Payment Method</th>
-                          <th>Activity</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="align-middle">
-                          <td class="text-center">
-                            <div class="avatar"><img class="avatar-img" src="assets/img/avatars/1.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span></div>
-                          </td>
-                          <td>
-                            <div>Yiorgos Avraamu</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-us"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">50%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2015 - Jul 10, 2015</small></div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-mastercard"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">10 sec ago</div>
-                          </td>
-                          <td>
-                            <div class="dropdown">
-                              <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg class="icon">
-                                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                                </svg>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="align-middle">
-                          <td class="text-center">
-                            <div class="avatar"><img class="avatar-img" src="assets/img/avatars/2.jpg" alt="user@email.com"><span class="avatar-status bg-danger"></span></div>
-                          </td>
-                          <td>
-                            <div>Avram Tarasios</div>
-                            <div class="small text-medium-emphasis"><span>Recurring</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-br"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">10%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2015 - Jul 10, 2015</small></div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-visa"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">5 minutes ago</div>
-                          </td>
-                          <td>
-                            <div class="dropdown">
-                              <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg class="icon">
-                                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                                </svg>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="align-middle">
-                          <td class="text-center">
-                            <div class="avatar"><img class="avatar-img" src="assets/img/avatars/3.jpg" alt="user@email.com"><span class="avatar-status bg-warning"></span></div>
-                          </td>
-                          <td>
-                            <div>Quintin Ed</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-in"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">74%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2015 - Jul 10, 2015</small></div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-stripe"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">1 hour ago</div>
-                          </td>
-                          <td>
-                            <div class="dropdown">
-                              <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg class="icon">
-                                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                                </svg>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="align-middle">
-                          <td class="text-center">
-                            <div class="avatar"><img class="avatar-img" src="assets/img/avatars/4.jpg" alt="user@email.com"><span class="avatar-status bg-secondary"></span></div>
-                          </td>
-                          <td>
-                            <div>Enéas Kwadwo</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-fr"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">98%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2015 - Jul 10, 2015</small></div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-paypal"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">Last month</div>
-                          </td>
-                          <td>
-                            <div class="dropdown">
-                              <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg class="icon">
-                                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                                </svg>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="align-middle">
-                          <td class="text-center">
-                            <div class="avatar"><img class="avatar-img" src="assets/img/avatars/5.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span></div>
-                          </td>
-                          <td>
-                            <div>Agapetus Tadeáš</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-es"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">22%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2015 - Jul 10, 2015</small></div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-apple-pay"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">Last week</div>
-                          </td>
-                          <td>
-                            <div class="dropdown dropup">
-                              <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg class="icon">
-                                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                                </svg>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="align-middle">
-                          <td class="text-center">
-                            <div class="avatar"><img class="avatar-img" src="assets/img/avatars/6.jpg" alt="user@email.com"><span class="avatar-status bg-danger"></span></div>
-                          </td>
-                          <td>
-                            <div>Friderik Dávid</div>
-                            <div class="small text-medium-emphasis"><span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/flag.svg#cif-pl"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-start">
-                                <div class="fw-semibold">43%</div>
-                              </div>
-                              <div class="float-end"><small class="text-medium-emphasis">Jun 11, 2015 - Jul 10, 2015</small></div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <svg class="icon icon-xl">
-                              <use xlink:href="node_modules/@coreui/icons/sprites/brand.svg#cib-cc-amex"></use>
-                            </svg>
-                          </td>
-                          <td>
-                            <div class="small text-medium-emphasis">Last login</div>
-                            <div class="fw-semibold">Yesterday</div>
-                          </td>
-                          <td>
-                            <div class="dropdown dropup">
-                              <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <svg class="icon">
-                                  <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-options"></use>
-                                </svg>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <table class="table table-responsive-sm table-striped">
+                    <thead>
+                      <tr>
+                        <th colspan="2" class="text-center"><button type="button" class="btn btn-secondary">Dodaj zadnie</button></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>LIT NAMYSŁÓW 2021</td>
+                        <td>LITNM21 M3</td>
+                      </tr>
+                      <tr>
+                        <td>LIT NAMYSŁÓW 2021</td>
+                        <td>LITNM21 M3</td>
+                      </tr>
+                      <tr>
+                        <td>LIT NAMYSŁÓW 2021</td>
+                        <td>LITNM21 M3</td>
+                      </tr>
+                      <tr>
+                        <td>LIT NAMYSŁÓW 2021</td>
+                        <td>LITNM21 M3</td>
+                      </tr>
+                      <tr>
+                        <td>LIT NAMYSŁÓW 2021</td>
+                        <td>LITNM21 M3</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+             </div>
+           </div>
+          </div>
+          <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+            <div class="card container">
+              <div class="row col-12">
+                <div class="card-header mt-3">
+                  <h2>Lista zamówień</h2>
+                  <button class="btn btn-sm btn-primary my-2" type="button">Dodaj nowy produkt</button>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-responsive table-relative table-striped">
+                    <thead class="sticky-top ">
+                      <tr class="table-sticky">
+                        <th></th>
+                        <th></th>
+                        <th>Rata</th>
+                        <th>Dni</th>
+                        <th>Faktura</th>
+                        <th>Data wykonania</th>
+                        <th>FV z dnia</th>
+                        <th>Netto</th>
+                        <th>Brutto</th>
+                        <th>Zalega Brutto</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="10">produkt1, (#17 dodane w dniu przez)</td>
+                        <td>
+                          <button class="btn btn-md btn-info text-white fw-bold mx-1" type="button">Pokaż</button>
+                          <button class="btn btn-md btn-success text-white fw-bold mx-1" type="button">Edytuj</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable1" aria-expanded="false" aria-controls="collapseTable1">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable1">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable2" aria-expanded="false" aria-controls="collapseTable2">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable2">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable3" aria-expanded="false" aria-controls="collapseTable3">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable3">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable4" aria-expanded="false" aria-controls="collapseTable4">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable4">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable5" aria-expanded="false" aria-controls="collapseTable5">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable5">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable6" aria-expanded="false" aria-controls="collapseTable6">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable6">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable7" aria-expanded="false" aria-controls="collapseTable7">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable7">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable8" aria-expanded="false" aria-controls="collapseTable8">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable8">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>#Num</td>
+                        <td>ADMIN</td>
+                        <td>0</td>
+                        <td>7/2021</td>
+                        <td>2012/02/01</td>
+                        <td>2012/02/01</td>
+                        <td>0,17 zł</td>
+                        <td>0,21 zł</td>
+                        <td>0,00 zł</td>
+                        <td>0,00 zł</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-info btn-hover-white font-size-075  fw-bold mx-1" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTable9" aria-expanded="false" aria-controls="collapseTable9">Rozlicz</button>
+                          <button class="btn btn-sm btn-outline-success btn-hover-white font-size-075 fw-bold mx-1" type="button">Faktura</button>
+                          <tr class="collapse" id="collapseTable9">
+                            <td colspan="3">Kwota rozliczenia:</td>
+                            <td colspan="3">Data</td>
+                            <td colspan="3">Komentarz</td>
+                            <td><button class="btn btn-sm btn-outline-warning btn-hover-white font-size-075  fw-bold mx-1" type="button" >Opłać</button></td>
+                          </tr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-            <!-- /.col-->
           </div>
-          <!-- /.row-->
         </div>
       </div>
-      <footer class="footer">
-        <div><a href="https://coreui.io">CoreUI</a> &copy; 2021 creativeLabs.</div>
-        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/">CoreUI</a></div>
-      </footer>
     </div>
+
+
+
+
     <!-- CoreUI and necessary plugins-->
     <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
     <!-- Plugins and scripts required by this view-->
